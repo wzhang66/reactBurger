@@ -13,7 +13,7 @@ const burger = (props) => {
     },[]); //Object.keys() returns us an array to use map()
   if(transformedIngredients.length === 0) {
     transformedIngredients =
-    <button>Please start adding ingredients</button>
+    <p>Please start adding ingredients</p>
   }
   return (
     <div className={classes.Burger}>
