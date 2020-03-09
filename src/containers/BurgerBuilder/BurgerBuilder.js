@@ -78,20 +78,6 @@ class BurgerBuilder extends Component {
     this.setState({purchasing:false});
   }
 
-  resetHandler = () => {
-    this.setState ( {
-      ingredients: {
-        salad: 0,
-        bacon: 0,
-        cheese: 0,
-        meat: 0
-      },
-      totalPrice: 4,
-      purchaseable: false,
-      purchasing: false
-    })
-  }
-
   purchaseContinueHandler = () => {
     return null
   }
@@ -112,8 +98,7 @@ class BurgerBuilder extends Component {
             ingredients={this.state.ingredients}
             price = {this.state.totalPrice}
             pay = {this.purchaseContinueHandler}
-            modify = {this.modifyHandler}
-            reset = {this.resetHandler}/>
+            modify = {this.modifyHandler}/>
         </Modal>
         <Burger ingredients={this.state.ingredients}/>
         <BuildControls
