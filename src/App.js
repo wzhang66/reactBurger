@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Layout from './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+import { BrowserRouter } from 'react-router-dom';
+import CheckOut from './containers/CheckOut/CheckOut';
 
 class App extends Component {
 
@@ -9,6 +11,7 @@ class App extends Component {
       <div>
         <Layout>
           <BurgerBuilder />
+          <CheckOut />
         </Layout>
       </div>
     );
