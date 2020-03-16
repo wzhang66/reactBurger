@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import axios from 'axios';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux';
 

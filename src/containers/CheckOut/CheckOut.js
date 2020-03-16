@@ -5,13 +5,9 @@ import ContactData from './ContactData/ContactData';
 
 
 class CheckOut extends Component {
-  state ={
-    ingredients:null,
-    price:0
-  }
-
-  // Pass the encoded ingredients to the checkout containers
-  componentWillMount(){
+  constructor(props){
+    super(props);
+    // Pass the encoded ingredients to the checkout containers
     const query = new URLSearchParams(this.props.location.search);
     const ingredients = {};
     let price = 0
@@ -22,8 +18,10 @@ class CheckOut extends Component {
         ingredients[param[0]] = +param[1];
       }
     }
-    this.setState({ingredients: ingredients,price:price});
+    this.state={ingredients: ingredients,price:price};
   }
+
+
 
   checkOutCancelHandler = () =>{
     this.props.history.goBack();
