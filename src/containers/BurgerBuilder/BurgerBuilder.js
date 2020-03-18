@@ -12,12 +12,12 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../store/actions/index';
 
 
-const INGREDIENT_PRICES = {
-  salad:0.5,
-  cheese: 0.4,
-  meat: 1.3,
-  bacon: 0.8
-}
+// const INGREDIENT_PRICES = {
+//   salad:0.5,
+//   cheese: 0.4,
+//   meat: 1.3,
+//   bacon: 0.8
+// }
 
 class BurgerBuilder extends Component {
   constructor(props){
@@ -97,7 +97,7 @@ class BurgerBuilder extends Component {
 
   // transfer this part to redux
   purchaseContinueHandler = () => {
-    const queryParams = [];
+    // const queryParams = [];
     // put all the ingredients into a url encoded array
     // for(let i in this.props.ingreds){
     //   queryParams.push(encodeURIComponent(i)+ '=' + encodeURIComponent(this.props.ingreds[i]));

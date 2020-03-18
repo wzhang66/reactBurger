@@ -50,7 +50,9 @@ class ContactData extends Component {
         },
         value:'',
         validation:{
-          required: true
+          required: true,
+          minLength: 5,
+          maxLength: 7
         },
         valid: false,
         shouldCheck: true,
@@ -78,7 +80,8 @@ class ContactData extends Component {
         },
         value:'',
         validation:{
-          required: true
+          required: true,
+          isEmail: true
         },
         valid: false,
         shouldCheck: true,
@@ -103,12 +106,22 @@ class ContactData extends Component {
 
   // function for checking the validation properties
   checkValidity (value, rules) {
-    let isValid = false;
+    let isValid = true;
 
     if(rules.required){
-      isValid = value.trim() !== '';
-    }
 
+      isValid = value.trim() !== '' && isValid;
+    }
+    if(rules.minLength) {
+      isValid = value.length >= rules.minLength && isValid
+    }
+    if(rules.maxLength) {
+      isValid = value.length <= rules.maxLength && isValid
+    }
+    if(rules.isEmail) {
+      const pattern = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      isValid = pattern.test(value) && isValid
+    }
     return isValid;
   }
 
